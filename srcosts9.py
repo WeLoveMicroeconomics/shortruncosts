@@ -1,4 +1,4 @@
-import streamlit as st
+#import streamlit as st
 from sympy import (
     symbols,
     Eq,
@@ -19,7 +19,7 @@ from sympy.parsing.sympy_parser import (
 )
 import numpy as np
 import matplotlib.pyplot as plt
-import os
+# import os
 
 # 1) Symbolic setup
 x, y = symbols("x y", real=True, nonnegative=True)
@@ -317,16 +317,16 @@ ax1.grid(True)
 ax1.legend()
 st.pyplot(fig1)
 
-if st.button("Save c(Q) plot"):
-    base_name1 = os.path.basename(file_name1)
-    try:
-        fig1.savefig(base_name1, dpi=300, bbox_inches="tight")
-        with open(base_name1, "rb") as f:
-            st.download_button(
-                "Download c(Q) Plot", f, file_name=base_name1, mime="image/png"
-            )
-    except Exception as e:
-        st.error(f"Failed to save or download c(Q) plot: {e}")
+# if st.button("Save c(Q) plot"):
+ #   base_name1 = os.path.basename(file_name1)
+  #  try:
+   #     fig1.savefig(base_name1, dpi=300, bbox_inches="tight")
+    #    with open(base_name1, "rb") as f:
+     #       st.download_button(
+      #          "Download c(Q) Plot", f, file_name=base_name1, mime="image/png"
+       #     )
+  #  except Exception as e:
+   #     st.error(f"Failed to save or download c(Q) plot: {e}")
 
 # 15) Plot 2: Efficiency and Marginal Cost
 fig2, ax2 = plt.subplots()
@@ -368,16 +368,16 @@ ax2.legend()
 ax2.grid(True)
 st.pyplot(fig2)
 
-if st.button("Save Efficiency/Marginal plot"):
-    base_name2 = os.path.basename(file_name2)
-    try:
-        fig2.savefig(base_name2, dpi=300, bbox_inches="tight")
-        with open(base_name2, "rb") as f:
-            st.download_button(
-                "Download Efficiency/Marginal Plot",
-                f,
-                file_name=base_name2,
-                mime="image/png",
-            )
-    except Exception as e:
-        st.error(f"Failed to save or download Efficiency/Marginal plot: {e}")
+# if st.button("Save Efficiency/Marginal plot"):
+ #   base_name2 = os.path.basename(file_name2)
+  #  try:
+   #     fig2.savefig(base_name2, dpi=300, bbox_inches="tight")
+    #    with open(base_name2, "rb") as f:
+     #       st.download_button(
+      #          "Download Efficiency/Marginal Plot",
+       #         f,
+        #        file_name=base_name2,
+         #       mime="image/png",
+          #  )
+   # except Exception as e:
+    #    st.error(f"Failed to save or download Efficiency/Marginal plot: {e}")
